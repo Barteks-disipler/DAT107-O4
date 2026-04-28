@@ -2,7 +2,12 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
            elementFormDefault="qualified">
 
-    <xs:element name="lokallag" type="lokallagType"/>
+    <xs:element name="lokallag" type="lokallagType">
+        <xs:unique name="mIdUnique">
+            <xs:selector xpath="lag/medlemmer/medlem"/>
+            <xs:field xpath="@mId"/>
+        </xs:unique>
+    </xs:element>
 
     <xs:complexType name="lokallagType">
         <xs:sequence>
@@ -82,7 +87,8 @@
             <xs:element name="aar">
                     <xs:simpleType>
                         <xs:restriction base="xs:integer">
-                            <xs:pattern value="[1900-2100]{4}"/>
+                            <xs:minInclusive value="1900"/>
+                            <xs:maxInclusive value="2100"/>
                         </xs:restriction>
                     </xs:simpleType>
             </xs:element>
@@ -93,12 +99,7 @@
 
     <xs:complexType name="medlemmerType">
         <xs:sequence>
-            <xs:element name="medlem" type="medlemType" minOccurs="1" maxOccurs="unbounded">
-                <xs:unique name="mId">
-                    <xs:selector xpath="medlem"/>
-                    <xs:field xpath="@mId"/>
-                </xs:unique>
-            </xs:element>
+            <xs:element name="medlem" type="medlemType" minOccurs="1" maxOccurs="unbounded"/>
         </xs:sequence>
     </xs:complexType>
 </xs:schema>
