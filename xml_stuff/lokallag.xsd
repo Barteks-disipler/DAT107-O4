@@ -37,7 +37,7 @@
             <xs:element name="navn" type="navnType"/>
             <xs:element name="kontakt" type="kontaktType"/>
             <xs:element name="adresse" type="adresseType"/>
-            <xs:element name="status" type="xs:boolean"/>
+            <xs:element name="erAktiv" type="xs:boolean"/>
             <xs:element name="avgifter" type="avgifterType"/>
         </xs:sequence>
         <xs:attribute name="mId" type="xs:positiveInteger" use="required"/>
@@ -52,7 +52,7 @@
 
     <xs:complexType name="kontaktType">
         <xs:sequence>
-            <xs:element name="telefon" type="xs:integer"/>
+            <xs:element name="telefon" type="xs:string"/>
             <xs:element name="epost" type="xs:string"/>
         </xs:sequence>
     </xs:complexType>
@@ -86,7 +86,7 @@
                         </xs:restriction>
                     </xs:simpleType>
             </xs:element>
-            <xs:element name="betalt" type="xs:boolean"/>
+            <xs:element name="erBetalt" type="xs:boolean"/>
             <xs:element name="dato" type="xs:dateTime"/>
         </xs:sequence>
     </xs:complexType>

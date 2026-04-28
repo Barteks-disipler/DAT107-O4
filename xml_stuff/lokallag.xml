@@ -28,11 +28,11 @@
                     <postnummer></postnummer>
                     <poststed></poststed>
                 </adresse>
-                <status></status>
+                <erAktiv></erAktiv>
                 <avgifter>
                     <avgift>
                         <aar></aar>
-                        <betalt></betalt>
+                        <erBetalt></erBetalt>
                         <dato></dato>
                     </avgift>
                 </avgifter>
