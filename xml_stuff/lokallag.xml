@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<lokallag xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="lokallag.xsd">
+    <lag>
+        <info>
+            <navn></navn>
+            <lokale></lokale>
+            <adresse></adresse>
+        </info>
+        <leder>
+            <navn>
+                <fornavn></fornavn>
+                <etternavn></etternavn>
+            </navn>
+        </leder>
+        <medlemmer>
+            <medlem mId="">
+                <navn>
+                    <fornavn></fornavn>
+                    <etternavn></etternavn>
+                </navn>
+                <kontakt>
+                    <telefon></telefon>
+                    <epost></epost>
+                </kontakt>
+                <adresse>
+                    <gateadresse></gateadresse>
+                    <postnummer></postnummer>
+                    <poststed></poststed>
+                </adresse>
+                <erAktiv></erAktiv>
+                <avgifter>
+                    <avgift>
+                        <aar></aar>
+                        <erBetalt></erBetalt>
+                        <dato></dato>
+                    </avgift>
+                </avgifter>
+            </medlem>
+        </medlemmer>
+    </lag>
+</lokallag>
