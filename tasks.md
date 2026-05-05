@@ -1,6 +1,6 @@
 # Oblig 4, DAT107, GRuppe []
 
-**Gruppenummer:** 
+**Gruppenummer:** 32
 
 ---
 
@@ -175,13 +175,16 @@ Filnavn: `lokallag.xsd`
 SELECT xmlelement(name "aktive-medlemmer",
     xmlagg(
         xmlelement(name "medlem",
-            xmlattributes(m.medlemsnummer as "mld"),
-            xmlelement(name "fornavn", m.fornavn),
-            xmlelement(name "etternavn", m.etternavn),
-            (SELECT xmlelement(name "avgift-2026", 
+            xmlattributes(m.medlemsnummer as "mld"), -- Krav: "mld" attributt 
+            xmlelement(name "fornavn", m.fornavn), -- Krav: fornavn 
+            xmlelement(name "etternavn", m.etternavn), -- Krav: etternavn 
+            (SELECT xmlelement(name "avgift-2026", -- Krav: <avgift-gjeldende år> 
                 xmlattributes(
-                    ma.betalt as "betalt",
-                    CASE WHEN ma.betalt = 'J' THEN ma.betalingsdato ELSE NULL END as "betalingsdato"
+                    ma.betalt as "betalt", -- Krav: "betalt" attributt (J/N) [cite: 157]
+                    CASE 
+                        WHEN ma.betalt = 'J' THEN ma.betalingsdato 
+                        ELSE NULL 
+                    END as "betalingsdato" -- Krav: vises kun hvis betalt [cite: 157]
                 )
             )
             FROM medlemsavgift ma 
@@ -191,7 +194,7 @@ SELECT xmlelement(name "aktive-medlemmer",
     )
 )
 FROM medlem m
-WHERE m.aktiv = 'J' AND m.lokallag_id = 1;
+WHERE m.aktiv = 'J' AND m.lokallag_id = 1; -- Krav: Aktive medlemmer i gitt lokallag
 ```
 
 ---
