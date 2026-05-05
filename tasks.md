@@ -390,6 +390,10 @@ db.arrangementer.insertMany([
 ]);
 ```
 
+![alt text](assets/mongodb-insertmany-arrangementer.png)
+
+![alt text](assets/mongodb-find-arrangementer.png)
+
 ---
 
 ## Oppgave 4.4 - MongoDB Query API
