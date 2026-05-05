@@ -1,4 +1,4 @@
-# Oblig 4, DAT107, GRuppe []
+# Oblig 4, DAT107
 
 **Gruppenummer:** 32
 
