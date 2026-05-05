@@ -14,81 +14,44 @@ Dette dokumentet representerer et lokallag med informasjon om leder, tre medlemm
 <?xml version="1.0" encoding="UTF-8"?>
 <lokallag xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
           xsi:noNamespaceSchemaLocation="lokallag.xsd">
-    <lagnavn>Bergen Kodeklubb</lagnavn>
-    <motelokale>
-        <gateadresse>Lars Hilles gate 30</gateadresse>
-        <postnummer>5008</postnummer>
-        <poststed>Bergen</poststed>
-    </motelokale>
-    <leder>
-        <navn>Lise Lotte</navn>
-        <mld>101</mld>
-    </leder>
-    <medlemmer>
-        <medlem mld="201">
+    <lag>
+        <info>
+            <navn></navn>
+            <lokale></lokale>
+            <adresse></adresse>
+        </info>
+        <leder>
             <navn>
-                <fornavn>Ola</fornavn>
-                <etternavn>Nordmann</etternavn>
+                <fornavn></fornavn>
+                <etternavn></etternavn>
             </navn>
-            <kontaktinfo>
-                <telefon>99887766</telefon>
-                <epost>ola@test.no</epost>
-            </kontaktinfo>
-            <adresse>
-                <gateadresse>Storgata 1</gateadresse>
-                <postnummer>5003</postnummer>
-                <poststed>Bergen</poststed>
-            </adresse>
-            <status>aktiv</status>
-            <medlemsavgifter>
-                <avgift ar="2024" betalt="ja" betalingsdato="2024-02-01"/>
-                <avgift ar="2025" betalt="ja" betalingsdato="2025-01-15"/>
-                <avgift ar="2026" betalt="nei"/>
-            </medlemsavgifter>
-        </medlem>
-        <medlem mld="202">
-            <navn>
-                <fornavn>Kari</fornavn>
-                <etternavn>Nordmann</etternavn>
-            </navn>
-            <kontaktinfo>
-                <telefon>44556677</telefon>
-                <epost>kari@test.no</epost>
-            </kontaktinfo>
-            <adresse>
-                <gateadresse>Fjellveien 2</gateadresse>
-                <postnummer>5014</postnummer>
-                <poststed>Bergen</poststed>
-            </adresse>
-            <status>aktiv</status>
-            <medlemsavgifter>
-                <avgift ar="2024" betalt="ja" betalingsdato="2024-03-10"/>
-                <avgift ar="2025" betalt="ja" betalingsdato="2025-02-20"/>
-                <avgift ar="2026" betalt="ja" betalingsdato="2026-01-05"/>
-            </medlemsavgifter>
-        </medlem>
-        <medlem mld="203">
-            <navn>
-                <fornavn>Per</fornavn>
-                <etternavn>Person</etternavn>
-            </navn>
-            <kontaktinfo>
-                <telefon>11223344</telefon>
-                <epost>per@test.no</epost>
-            </kontaktinfo>
-            <adresse>
-                <gateadresse>Parkveien 10</gateadresse>
-                <postnummer>5007</postnummer>
-                <poststed>Bergen</poststed>
-            </adresse>
-            <status>inaktiv</status>
-            <medlemsavgifter>
-                <avgift ar="2024" betalt="nei"/>
-                <avgift ar="2025" betalt="nei"/>
-                <avgift ar="2026" betalt="nei"/>
-            </medlemsavgifter>
-        </medlem>
-    </medlemmer>
+        </leder>
+        <medlemmer>
+            <medlem mId="">
+                <navn>
+                    <fornavn></fornavn>
+                    <etternavn></etternavn>
+                </navn>
+                <kontakt>
+                    <telefon></telefon>
+                    <epost></epost>
+                </kontakt>
+                <adresse>
+                    <gateadresse></gateadresse>
+                    <postnummer></postnummer>
+                    <poststed></poststed>
+                </adresse>
+                <erAktiv></erAktiv>
+                <avgifter>
+                    <avgift>
+                        <aar></aar>
+                        <erBetalt></erBetalt>
+                        <dato></dato>
+                    </avgift>
+                </avgifter>
+            </medlem>
+        </medlemmer>
+    </lag>
 </lokallag>
 ```
 
@@ -98,110 +61,111 @@ Dette dokumentet representerer et lokallag med informasjon om leder, tre medlemm
 
 Filnavn: `lokallag.xsd`
 
-Skjemaet sikrer riktig struktur, at postnummer er 4 siffer, og at årstall er mellom 1900 og 2100.
-
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
-    <xs:element name="lokallag">
-        <xs:complexType>
-            <xs:sequence>
-                <xs:element name="lagnavn" type="xs:string"/>
-                <xs:element name="motelokale">
-                    <xs:complexType>
-                        <xs:sequence>
-                            <xs:element name="gateadresse" type="xs:string"/>
-                            <xs:element name="postnummer">
-                                <xs:simpleType>
-                                    <xs:restriction base="xs:string">
-                                        <xs:pattern value="\d{4}"/>
-                                    </xs:restriction>
-                                </xs:simpleType>
-                            </xs:element>
-                            <xs:element name="poststed" type="xs:string"/>
-                        </xs:sequence>
-                    </xs:complexType>
-                </xs:element>
-                <xs:element name="leder">
-                    <xs:complexType>
-                        <xs:sequence>
-                            <xs:element name="navn" type="xs:string"/>
-                            <xs:element name="mld" type="xs:integer"/>
-                        </xs:sequence>
-                    </xs:complexType>
-                </xs:element>
-                <xs:element name="medlemmer">
-                    <xs:complexType>
-                        <xs:sequence>
-                            <xs:element name="medlem" maxOccurs="unbounded">
-                                <xs:complexType>
-                                    <xs:sequence>
-                                        <xs:element name="navn">
-                                            <xs:complexType>
-                                                <xs:sequence>
-                                                    <xs:element name="fornavn" type="xs:string"/>
-                                                    <xs:element name="etternavn" type="xs:string"/>
-                                                </xs:sequence>
-                                            </xs:complexType>
-                                        </xs:element>
-                                        <xs:element name="kontaktinfo">
-                                            <xs:complexType>
-                                                <xs:sequence>
-                                                    <xs:element name="telefon" type="xs:string" minOccurs="0"/>
-                                                    <xs:element name="epost" type="xs:string" minOccurs="0"/>
-                                                </xs:sequence>
-                                            </xs:complexType>
-                                        </xs:element>
-                                        <xs:element name="adresse">
-                                            <xs:complexType>
-                                                <xs:sequence>
-                                                    <xs:element name="gateadresse" type="xs:string"/>
-                                                    <xs:element name="postnummer">
-                                                        <xs:simpleType>
-                                                            <xs:restriction base="xs:string">
-                                                                <xs:pattern value="\d{4}"/>
-                                                            </xs:restriction>
-                                                        </xs:simpleType>
-                                                    </xs:element>
-                                                    <xs:element name="poststed" type="xs:string"/>
-                                                </xs:sequence>
-                                            </xs:complexType>
-                                        </xs:element>
-                                        <xs:element name="status" type="xs:string"/>
-                                        <xs:element name="medlemsavgifter">
-                                            <xs:complexType>
-                                                <xs:sequence>
-                                                    <xs:element name="avgift" maxOccurs="unbounded">
-                                                        <xs:complexType>
-                                                            <xs:attribute name="ar" use="required">
-                                                                <xs:simpleType>
-                                                                    <xs:restriction base="xs:integer">
-                                                                        <xs:minInclusive value="1900"/>
-                                                                        <xs:maxInclusive value="2100"/>
-                                                                    </xs:restriction>
-                                                                </xs:simpleType>
-                                                            </xs:attribute>
-                                                            <xs:attribute name="betalt" type="xs:string" use="required"/>
-                                                            <xs:attribute name="betalingsdato" type="xs:date" use="optional"/>
-                                                        </xs:complexType>
-                                                    </xs:element>
-                                                </xs:sequence>
-                                            </xs:complexType>
-                                        </xs:element>
-                                    </xs:sequence>
-                                    <xs:attribute name="mld" type="xs:integer" use="required"/>
-                                </xs:complexType>
-                            </xs:element>
-                        </xs:sequence>
-                    </xs:complexType>
-                </xs:element>
-            </xs:sequence>
-        </xs:complexType>
-        <xs:unique name="uniqueMld">
-            <xs:selector xpath="medlemmer/medlem"/>
-            <xs:field xpath="@mld"/>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified">
+
+    <xs:element name="lokallag" type="lokallagType">
+        <xs:unique name="mIdUnique">
+            <xs:selector xpath="lag/medlemmer/medlem"/>
+            <xs:field xpath="@mId"/>
         </xs:unique>
     </xs:element>
+
+    <xs:complexType name="lokallagType">
+        <xs:sequence>
+            <xs:element name="lag" type="lagType" minOccurs="1" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="lagType">
+        <xs:sequence>
+            <xs:element name="info" type="infoType"/>
+            <xs:element name="leder" type="lederType"/>
+            <xs:element name="medlemmer" type="medlemmerType"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="infoType">
+        <xs:sequence>
+            <xs:element name="navn" type="xs:string"/>
+            <xs:element name="lokale" type="xs:string"/>
+            <xs:element name="adresse" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="lederType">
+        <xs:sequence>
+            <xs:element name="navn" type="navnType"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="medlemType">
+        <xs:sequence>
+            <xs:element name="navn" type="navnType"/>
+            <xs:element name="kontakt" type="kontaktType"/>
+            <xs:element name="adresse" type="adresseType"/>
+            <xs:element name="erAktiv" type="xs:boolean"/>
+            <xs:element name="avgifter" type="avgifterType"/>
+        </xs:sequence>
+        <xs:attribute name="mId" type="xs:positiveInteger" use="required"/>
+    </xs:complexType>
+
+    <xs:complexType name="navnType">
+        <xs:sequence>
+            <xs:element name="fornavn" type="xs:string"/>
+            <xs:element name="etternavn" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="kontaktType">
+        <xs:sequence>
+            <xs:element name="telefon" type="xs:string"/>
+            <xs:element name="epost" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="adresseType">
+        <xs:sequence>
+            <xs:element name="gateadresse" type="xs:string"/>
+            <xs:element name="postnummer">
+                <xs:simpleType>
+                    <xs:restriction base="xs:integer">
+                        <xs:pattern value="[0-9]{4}"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="poststed" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="avgifterType">
+        <xs:sequence>
+            <xs:element name="avgift" type="avgiftType" minOccurs="1" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="avgiftType">
+        <xs:sequence>
+            <xs:element name="aar">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:integer">
+                            <xs:minInclusive value="1900"/>
+                            <xs:maxInclusive value="2100"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+            </xs:element>
+            <xs:element name="erBetalt" type="xs:boolean"/>
+            <xs:element name="dato" type="xs:dateTime"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="medlemmerType">
+        <xs:sequence>
+            <xs:element name="medlem" type="medlemType" minOccurs="1" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
 </xs:schema>
 ```
 
