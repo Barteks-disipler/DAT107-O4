@@ -1,6 +1,15 @@
 # Oblig 4, DAT107
 
+## Medlemmer og gruppenummer
+
 **Gruppenummer:** 32
+
+| Navn                          | Stud_id | Github brukernavn                                    |
+| ----------------------------- | ------- | ---------------------------------------------------- |
+| Bartosz Arkadiusz Paszkiewicz | 679414  | [@Paszkiewicz](https://github.com/paszkiewicz)       |
+| Daniel Aarsand                | 194916  | [@Aarsand](https://github.com/Aarsand)               |
+| Lars Birger Bergmål           | 583411  | [@larsbirger](https://github.com/larsbirger)         |
+| Markus Fosse Høvring          | 194918  | [@Markus-Hovring](https://github.com/Markus-Hovring) |
 
 ---
 
