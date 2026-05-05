@@ -8,8 +8,6 @@
 
 Filnavn: `lokallag.xml`
 
-Dette dokumentet representerer et lokallag med informasjon om leder, tre medlemmer og deres betalingshistorikk.
-
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <lokallag xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
