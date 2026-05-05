@@ -14,37 +14,115 @@ Filnavn: `lokallag.xml`
           xsi:noNamespaceSchemaLocation="lokallag.xsd">
     <lag>
         <info>
-            <navn></navn>
-            <lokale></lokale>
-            <adresse></adresse>
+            <navn>lyn</navn>
+            <lokale>Lyn klubbhus</lokale>
+            <adresse>Olav M. Troviks vei 13</adresse>
         </info>
         <leder>
             <navn>
-                <fornavn></fornavn>
-                <etternavn></etternavn>
+                <fornavn>ola</fornavn>
+                <etternavn>nordmann</etternavn>
             </navn>
         </leder>
         <medlemmer>
-            <medlem mId="">
+            <medlem mId="1">
                 <navn>
-                    <fornavn></fornavn>
-                    <etternavn></etternavn>
+                    <fornavn>ola</fornavn>
+                    <etternavn>nordmann</etternavn>
                 </navn>
                 <kontakt>
-                    <telefon></telefon>
-                    <epost></epost>
+                    <telefon>9434567</telefon>
+                    <epost>ola@nordmann.no</epost>
                 </kontakt>
                 <adresse>
-                    <gateadresse></gateadresse>
-                    <postnummer></postnummer>
-                    <poststed></poststed>
+                    <gateadresse>gateadressen 2</gateadresse>
+                    <postnummer>0800</postnummer>
+                    <poststed>oslo</poststed>
                 </adresse>
-                <erAktiv></erAktiv>
+                <erAktiv>true</erAktiv>
                 <avgifter>
-                    <avgift>
-                        <aar></aar>
-                        <erBetalt></erBetalt>
-                        <dato></dato>
+                    <avgift aNr="1">
+                        <aar>2000</aar>
+                        <erBetalt>true</erBetalt>
+                        <dato>2000-03-03T20:20:46</dato>
+                    </avgift>
+                    <avgift aNr="2">
+                        <aar>2001</aar>
+                        <erBetalt>true</erBetalt>
+                        <dato>2001-03-03T20:20:46</dato>
+                    </avgift>
+                    <avgift aNr="3">
+                        <aar>2002</aar>
+                        <erBetalt>true</erBetalt>
+                        <dato>2002-03-03T20:20:46</dato>
+                    </avgift>
+                </avgifter>
+            </medlem>
+
+            <medlem mId="2">
+                <navn>
+                    <fornavn>kari</fornavn>
+                    <etternavn>nordame</etternavn>
+                </navn>
+                <kontakt>
+                    <telefon>1234567</telefon>
+                    <epost>kari@nordame.no</epost>
+                </kontakt>
+                <adresse>
+                    <gateadresse>heivegen 2</gateadresse>
+                    <postnummer>0010</postnummer>
+                    <poststed>oslo</poststed>
+                </adresse>
+                <erAktiv>true</erAktiv>
+                <avgifter>
+                    <avgift aNr="1">
+                        <aar>2001</aar>
+                        <erBetalt>true</erBetalt>
+                        <dato>2001-03-03T20:20:46</dato>
+                    </avgift>
+                    <avgift aNr="2">
+                        <aar>2002</aar>
+                        <erBetalt>true</erBetalt>
+                        <dato>2002-03-03T20:20:46</dato>
+                    </avgift>
+                    <avgift aNr="3">
+                        <aar>2003</aar>
+                        <erBetalt>true</erBetalt>
+                        <dato>2003-03-03T20:20:46</dato>
+                    </avgift>
+                </avgifter>
+            </medlem>
+
+            <medlem mId="3">
+                <navn>
+                    <fornavn>harald</fornavn>
+                    <etternavn>kongen</etternavn>
+                </navn>
+                <kontakt>
+                    <telefon>0000001</telefon>
+                    <epost>harald@rex.no</epost>
+                </kontakt>
+                <adresse>
+                    <gateadresse>slottsplassen 1</gateadresse>
+                    <postnummer>0011</postnummer>
+                    <poststed>oslo</poststed>
+                </adresse>
+                <erAktiv>true</erAktiv>
+                <avgifter>
+                    <avgift aNr="1">
+                        <aar>2002</aar>
+                        <erBetalt>true</erBetalt>
+                        <dato>2002-03-03T20:20:46</dato>
+                    </avgift>
+                    <avgift aNr="2">
+                        <aar>2003</aar>
+                        <erBetalt>true</erBetalt>
+                        <dato>2003-03-03T20:20:46</dato>
+                    </avgift>
+                    <avgift aNr="3">
+                        <aar>2004</aar>
+                        <erBetalt>true</erBetalt>
+                        <dato>2004-03-03T20:20:46</dato>
                     </avgift>
                 </avgifter>
             </medlem>
@@ -147,16 +225,17 @@ Filnavn: `lokallag.xsd`
     <xs:complexType name="avgiftType">
         <xs:sequence>
             <xs:element name="aar">
-                    <xs:simpleType>
-                        <xs:restriction base="xs:integer">
-                            <xs:minInclusive value="1900"/>
-                            <xs:maxInclusive value="2100"/>
-                        </xs:restriction>
-                    </xs:simpleType>
+                <xs:simpleType>
+                    <xs:restriction base="xs:integer">
+                        <xs:minInclusive value="1900"/>
+                        <xs:maxInclusive value="2100"/>
+                    </xs:restriction>
+                </xs:simpleType>
             </xs:element>
             <xs:element name="erBetalt" type="xs:boolean"/>
             <xs:element name="dato" type="xs:dateTime"/>
         </xs:sequence>
+        <xs:attribute name="aNr" type="xs:positiveInteger" use="required"/>
     </xs:complexType>
 
     <xs:complexType name="medlemmerType">
