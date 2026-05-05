@@ -95,6 +95,7 @@
             <xs:element name="erBetalt" type="xs:boolean"/>
             <xs:element name="dato" type="xs:dateTime"/>
         </xs:sequence>
+        <xs:attribute name="aNr" type="xs:positiveInteger" use="required"/>
     </xs:complexType>
 
     <xs:complexType name="medlemmerType">

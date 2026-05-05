@@ -1,0 +1,294 @@
+{
+  "lokallag": {
+    "lag": [
+      {
+        "info": [
+          {
+            "navn": "Lyn"
+          },
+          {
+            "lokale": "Lyn klubbhus"
+          },
+          {
+            "adresse": "Olav M. Troviks vei 13"
+          }
+        ]
+      },
+      {
+        "leder": {
+          "navn": [
+            {
+              "fornavn": "ola"
+            },
+            {
+              "etternavn": "nordmann"
+            }
+          ]
+        }
+      },
+      {
+        "medlemmer": [
+          {
+            "medlem@mId": "1",
+            "medlem": [
+              {
+                "navn": [
+                  {
+                    "fornavn": "ola"
+                  },
+                  {
+                    "etternavn": "nordmann"
+                  }
+                ]
+              },
+              {
+                "kontakt": [
+                  {
+                    "telefon": "9434567"
+                  },
+                  {}
+                ]
+              },
+              {
+                "adresse": [
+                  {
+                    "gateadresse": "gateadressen 2"
+                  },
+                  {
+                    "postnummer": "0800"
+                  },
+                  {
+                    "poststed": "oslo"
+                  }
+                ]
+              },
+              {
+                "erAktiv": "true"
+              },
+              {
+                "avgifter": [
+                  {
+                    "avgift@aNr": "1",
+                    "avgift": [
+                      {
+                        "aar": "2000"
+                      },
+                      {
+                        "erBetalt": "true"
+                      },
+                      {
+                        "dato": "2000-03-03T20:20:46"
+                      }
+                    ]
+                  },
+                  {
+                    "avgift@aNr": "2",
+                    "avgift": [
+                      {
+                        "aar": "2001"
+                      },
+                      {
+                        "erBetalt": "true"
+                      },
+                      {
+                        "dato": "2001-03-03T20:20:46"
+                      }
+                    ]
+                  },
+                  {
+                    "avgift@aNr": "3",
+                    "avgift": [
+                      {
+                        "aar": "2002"
+                      },
+                      {
+                        "erBetalt": "true"
+                      },
+                      {
+                        "dato": "2002-03-03T20:20:46"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "medlem@mId": "2",
+            "medlem": [
+              {
+                "navn": [
+                  {
+                    "fornavn": "kari"
+                  },
+                  {
+                    "etternavn": "nordame"
+                  }
+                ]
+              },
+              {
+                "kontakt": [
+                  {
+                    "telefon": "1234567"
+                  },
+                  {
+                    "epost": "kari@nordame.no"
+                  }
+                ]
+              },
+              {
+                "adresse": [
+                  {
+                    "gateadresse": "heivegen 2"
+                  },
+                  {
+                    "postnummer": "0010"
+                  },
+                  {
+                    "poststed": "oslo"
+                  }
+                ]
+              },
+              {
+                "erAktiv": "true"
+              },
+              {
+                "avgifter": [
+                  {
+                    "avgift@aNr": "1",
+                    "avgift": [
+                      {
+                        "aar": "2001"
+                      },
+                      {
+                        "erBetalt": "true"
+                      },
+                      {
+                        "dato": "2001-03-03T20:20:46"
+                      }
+                    ]
+                  },
+                  {
+                    "avgift@aNr": "2",
+                    "avgift": [
+                      {
+                        "aar": "2002"
+                      },
+                      {
+                        "erBetalt": "true"
+                      },
+                      {
+                        "dato": "2002-03-03T20:20:46"
+                      }
+                    ]
+                  },
+                  {
+                    "avgift@aNr": "3",
+                    "avgift": [
+                      {
+                        "aar": "2003"
+                      },
+                      {
+                        "erBetalt": "true"
+                      },
+                      {
+                        "dato": "2003-03-03T20:20:46"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "medlem@mId": "3",
+            "medlem": [
+              {
+                "navn": [
+                  {
+                    "fornavn": "harald"
+                  },
+                  {
+                    "etternavn": "kongen"
+                  }
+                ]
+              },
+              {
+                "kontakt": [
+                  {
+                    "telefon": "0000001"
+                  },
+                  {
+                    "epost": "harald@rex.no"
+                  }
+                ]
+              },
+              {
+                "adresse": [
+                  {
+                    "gateadresse": "slottsplassen 1"
+                  },
+                  {
+                    "postnummer": "0011"
+                  },
+                  {
+                    "poststed": "oslo"
+                  }
+                ]
+              },
+              {
+                "erAktiv": "true"
+              },
+              {
+                "avgifter": [
+                  {
+                    "avgift@aNr": "1",
+                    "avgift": [
+                      {
+                        "aar": "2002"
+                      },
+                      {
+                        "erBetalt": "true"
+                      },
+                      {
+                        "dato": "2002-03-03T20:20:46"
+                      }
+                    ]
+                  },
+                  {
+                    "avgift@aNr": "2",
+                    "avgift": [
+                      {
+                        "aar": "2003"
+                      },
+                      {
+                        "erBetalt": "true"
+                      },
+                      {
+                        "dato": "2003-03-03T20:20:46"
+                      }
+                    ]
+                  },
+                  {
+                    "avgift@aNr": "3",
+                    "avgift": [
+                      {
+                        "aar": "2004"
+                      },
+                      {
+                        "erBetalt": "true"
+                      },
+                      {
+                        "dato": "2004-03-03T20:20:46"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
